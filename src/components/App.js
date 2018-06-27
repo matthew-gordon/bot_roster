@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import Navbar from '../components/navbar/Navbar';
 
@@ -7,10 +9,15 @@ import routes from '../routes';
 
 class App extends Component {
   render() {
+    const { appName, currentUser, loginUser } = this.props;
+
     return (
       <div className="app">
         <Navbar
-          appName={'Bot Roster'}
+          appName={appName}
+          currentUser={currentUser}
+          login={loginUser}
+          history={this.props.history}
         />
 
         <div className="main-content">
@@ -23,4 +30,9 @@ class App extends Component {
   }
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  appName: state.common.appName,
+  currentUser: state.common.currentUser,
+});
+
+export default withRouter(connect(mapStateToProps, actions)(App));
