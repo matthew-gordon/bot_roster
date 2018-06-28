@@ -24,7 +24,7 @@ class TeamScreen extends Component {
 
     return (
       <div style={{ height: '100vh', marginTop: '4.5rem' }}>
-        <TeamList teams={teams} />
+        <TeamList teams={teams} newTeam={this._handleButton} />
       </div>
     );
   }

@@ -2,12 +2,12 @@ import React from 'react';
 
 import TeamCard from './TeamCard';
 
-const TeamList = ({ teams }) => {
+const TeamList = ({ teams, newTeam }) => {
   return (
     <div className="container">
       <div className="row" style={{ marginBottom: '1.5rem' }}>
         <div className="col-md-12">
-          <button onClick={this._handleButton} className="btn btn-outline-warning">New Team</button>
+          <button onClick={newTeam} className="btn btn-outline-warning">New Team</button>
         </div>
       </div>
       <div className="row">

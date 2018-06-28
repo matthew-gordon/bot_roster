@@ -2,6 +2,7 @@ import LandingScreen from '../screens/LandingScreen';
 import HomeScreen from '../screens/HomeScreen';
 import NewTeamScreen from '../screens/NewTeamScreen';
 import TeamScreen from '../screens/TeamScreen';
+import TeamDetailScreen from '../screens/TeamDetailScreen';
 import LogoutScreen from '../screens/LogoutScreen';
 
 export default [
@@ -28,6 +29,12 @@ export default [
     exact: true,
     name: 'teams',
     component: TeamScreen,
+  },
+  {
+    path: '/team/:id/roster',
+    exact: true,
+    name: 'teams',
+    component: TeamDetailScreen,
   },
   {
     path: '/logout',
